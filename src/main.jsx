@@ -1,3 +1,9 @@
-import { render } from "preact";
-import App from "./app.jsx"; // ✅ Default import
-render(<App />, document.getElementById("app"));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
