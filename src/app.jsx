@@ -5,7 +5,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import GlobalStyles from "./styles/";
+import GlobalStyles from "./styles/GlobalStyles";
 
 import Dashboard from "./pages/Dashboard";
 import Bookings from "./pages/Bookings";
