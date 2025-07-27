@@ -21,7 +21,7 @@ function App() {
         <H1>The wild oasis</H1>
         <Button>click me </Button>
         <Button>click him </Button>
-        <Input type="number" placeholder="number of guests"></Inp>
+        <Input type="number" placeholder="number of guests"></Input>
       </StyledApp>
     </>
   );
