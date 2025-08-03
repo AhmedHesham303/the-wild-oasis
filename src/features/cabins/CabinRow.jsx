@@ -55,10 +55,12 @@ function CabinRow({ cabin }) {
   const { isLoading: isDeleting, mutate } = useMutation({
     mutationFn: deleteCabine,
     onSuccess: () => {
+      alert("Cabin successfully deleted");
       queryClient.invalidateQueries({
-        queryKey: ["cabin"],
+        queryKey: ["cabins"],
       });
     },
+    onError: (err) => alert(err.message),
   });
   return (
     <TableRow role="row">
