@@ -56,7 +56,7 @@ function CabinRow({ cabin }) {
     mutationFn: deleteCabine,
     onSuccess: () => {
       queryClient.invalidateQueries({
-        queryKey: ["cabins"],
+        queryKey: ["cabin"],
       });
     },
   });
