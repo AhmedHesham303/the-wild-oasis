@@ -1,10 +1,4 @@
-import {
-  BrowserRouter,
-  Navigate,
-  replace,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import GlobalStyles from "./styles/GlobalStyles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
@@ -22,12 +16,12 @@ import AppLayout from "./ui/AppLayout";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 60 * 1000,
+      staleTime: 0,
     },
   },
 });
 
-function app() {
+function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
@@ -35,12 +29,7 @@ function app() {
       <BrowserRouter>
         <Routes>
           <Route element={<AppLayout />}>
-            <Route
-              index
-              element={
-                <Dashboard element={<Navigate replace to="dashboard" />} />
-              }
-            ></Route>
+            <Route index element={<Navigate replace to="dashboard" />}></Route>
 
             <Route path="dashboard" element={<Dashboard />}></Route>
             <Route path="bookings" element={<Bookings />}></Route>
@@ -57,4 +46,4 @@ function app() {
   );
 }
 
-export default app;
+export default App;
